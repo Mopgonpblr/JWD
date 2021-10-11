@@ -1,23 +1,21 @@
 package by.epamtc.HacakConstantine.task01.ex10;
 
-import java.util.Scanner;
-
 public class Logic {
-    static Scanner sc = new Scanner(System.in);
-
-    public static int scanInt() {
-        while (!sc.hasNextInt()) {
-            sc.next();
-        }
-        return sc.nextInt();
-    }
 
     public static double findFx(int x) {
         return Math.tan(x);
     }
 
     public static double[] arrayOfArgs(int a, int b, int h) {
-        double[] x = new double[(b + a) / h];
+        int size;
+        double[] x;
+        if (a<b && h>0)
+            size=(b - a) / h +1;
+        else if (a>b && h<0)
+            size=(a - b) / Math.abs(h) +1;
+        else
+            return null;
+        x = new double[size];
         for (int i = 0; i < x.length; i++) {
             x[i] = a;
             a += h;
@@ -32,11 +30,5 @@ public class Logic {
             a += h;
         }
         return y;
-    }
-
-    public static void printTable(double[] x, double[] y) {
-        System.out.println("X | F(x)");
-        for (int i = 0; i < x.length; i++)
-            System.out.println(x[i] + " " + y[i]);
     }
 }

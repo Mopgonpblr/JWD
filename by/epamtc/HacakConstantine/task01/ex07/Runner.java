@@ -1,24 +1,22 @@
 package by.epamtc.HacakConstantine.task01.ex07;
 
+import by.epamtc.HacakConstantine.task01.NewScanner;
+
 public class Runner {
     public static void main(String[] args) {
         Point a = new Point();
         Point b = new Point();
         System.out.println("Point A");
         System.out.println("Enter X: ");
-        a.setX(Logic.scanInt());
+        a.setX(NewScanner.scanInt());
         System.out.println("Enter Y: ");
-        a.setY(Logic.scanInt());
+        a.setY(NewScanner.scanInt());
         System.out.println("Point B");
         System.out.println("Enter X: ");
-        b.setX(Logic.scanInt());
+        b.setX(NewScanner.scanInt());
         System.out.println("Enter Y: ");
-        b.setY(Logic.scanInt());
-        if (Logic.findLength(a) < Logic.findLength(b))
-            System.out.println("Point A is closer to the origin");
-        else if (Logic.findLength(b) < Logic.findLength(a))
-            System.out.println("Point B is closer to the origin");
-        else
-            System.out.println("The points are equally far from the origin");
+        b.setY(NewScanner.scanInt());
+        Point result=Logic.result(a,b);
+        System.out.println("X: "+result.getX()+" Y: "+result.getY()+" is closer");
     }
 }

@@ -1,9 +1,7 @@
 package by.epamtc.HacakConstantine.task01.ex06;
 
-import java.util.Scanner;
-
 public class Logic {
-    static Scanner sc = new Scanner(System.in);
+
 
     public static int findHours(int seconds) {
         return seconds / 3600;
@@ -19,14 +17,5 @@ public class Logic {
         return seconds;
     }
 
-    public static int scanInt() {
-        int seconds;
-        do {
-            while (!sc.hasNextInt()) {
-                sc.next();
-            }
-            seconds = sc.nextInt();
-        } while (seconds > 86400 || seconds < 1);
-        return seconds;
-    }
+
 }

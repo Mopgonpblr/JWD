@@ -1,9 +1,13 @@
 package by.epamtc.HacakConstantine.task01.ex02;
 
-import java.util.Scanner;
-
 public class Logic {
-    static Scanner sc = new Scanner(System.in);
+
+    public static String result(int year) {
+        if (isYearLeap(year))
+            return "The year is leap";
+        else
+            return "The year isn't leap";
+    }
 
     public static boolean isYearLeap(int year) {
         return (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
@@ -24,26 +28,5 @@ public class Logic {
         }
     }
 
-    public static int scanYear() {
-        int year;
-        do {
-            while (!sc.hasNextInt()) {
-                sc.next();
-            }
-            year = sc.nextInt();
-        }
-        while (year > 2021);
-        return year;
-    }
 
-    public static int scanMonth() {
-        int month;
-        do {
-            while (!sc.hasNextInt()) {
-                sc.next();
-            }
-            month = sc.nextInt();
-        } while (month < 1 || month > 12);
-        return month;
-    }
 }
